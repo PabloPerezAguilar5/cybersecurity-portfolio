@@ -1,0 +1,1 @@
+2026-11-04T18:05:31-03:00 redacted-host sshd[33080]: Failed password for redacted-user from 192.0.2.101 port 50000 ssh2

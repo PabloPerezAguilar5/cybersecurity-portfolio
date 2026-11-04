@@ -1,0 +1,5 @@
+LAB-02-001 | Real controlled test | Sanitized journal excerpt | UTC-03:00
+Source: journalctl --since '2026-11-04 18:05:25' --until '2026-11-04 18:05:40' --no-pager -o short-iso
+Redactions: [HOST], [LOCAL_USER], [CLIENT_IP], and [CLIENT_PORT] replace identifying or session-specific fields.
+
+2026-11-04T18:05:31-03:00 [HOST] sshd[33080]: Failed password for [LOCAL_USER] from [CLIENT_IP] port [CLIENT_PORT] ssh2
