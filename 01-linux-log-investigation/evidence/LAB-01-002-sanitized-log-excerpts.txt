@@ -1,0 +1,6 @@
+LAB-01-002 | Sanitized journal excerpts | Current boot | UTC-03:00
+Source: journalctl -b --since '2026-11-04 11:34:30' --until '2026-11-04 11:36:30' --no-pager -o short-iso
+Redactions: [HOST], [LOCAL_USER], [LOCAL_UID], and [TTY] replace identifying or session-specific values. Other event text, timestamps, process names, and PIDs are retained.
+
+2026-11-04T11:35:28-03:00 [HOST] su[21405]: pam_unix(su-l:auth): authentication failure; logname=[LOCAL_USER] uid=[LOCAL_UID] euid=0 tty=[TTY] ruser=[LOCAL_USER] rhost=  user=[LOCAL_USER]
+2026-11-04T11:35:29-03:00 [HOST] su[21405]: FAILED SU (to [LOCAL_USER]) [LOCAL_USER] on [TTY]
