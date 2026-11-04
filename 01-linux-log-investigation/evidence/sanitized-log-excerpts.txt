@@ -1,0 +1,11 @@
+LAB-01-001 | Sanitized journal excerpts | Current boot | UTC-03:00
+Source: journalctl -b --since '2026-11-04 06:17:30' --until '2026-11-04 06:20:00' --no-pager -o short-iso
+Redactions: [HOST], [LOCAL_USER], [LOCAL_UID], and [HOME] replace identifying values. All other event text, timestamps, process names, and PIDs are retained.
+
+2026-11-04T06:18:20-03:00 [HOST] systemd[1]: Starting apt-daily-upgrade.service - Daily apt upgrade and clean activities...
+2026-11-04T06:18:33-03:00 [HOST] systemd[1]: Started packagekit.service - PackageKit Daemon.
+2026-11-04T06:18:35-03:00 [HOST] polkitd[895]: Finished loading, compiling and executing 16 rules
+2026-11-04T06:18:45-03:00 [HOST] pkexec[6243]: pam_unix(polkit-1:session): session opened for user root(uid=0) by [LOCAL_USER](uid=[LOCAL_UID])
+2026-11-04T06:18:45-03:00 [HOST] pkexec[6243]: [LOCAL_USER]: Executing command [USER=root] [TTY=unknown] [CWD=[HOME]] [COMMAND=/usr/lib/update-notifier/package-system-locked]
+2026-11-04T06:18:45-03:00 [HOST] update-notifier.desktop[6275]: /var/cache/apt/archives/lock:
+2026-11-04T06:18:47-03:00 [HOST] systemd[1]: Finished apt-daily-upgrade.service - Daily apt upgrade and clean activities.
