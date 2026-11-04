@@ -1,0 +1,28 @@
+# Credentials / local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.p12
+*.pfx
+# Raw machine data: do not commit without explicit sanitization and review
+*.log
+*.pcap
+*.pcapng
+*.evtx
+*.sqlite
+*.db
+# OS, IDE, Python
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
