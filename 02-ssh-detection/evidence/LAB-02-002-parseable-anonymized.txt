@@ -1,0 +1,7 @@
+# ANONYMIZED DERIVATIVE OF OBSERVED JOURNAL EVENTS — NOT SYNTHETIC
+# Original timestamps and Failed password event type retained.
+# Host, account, source IP, PID and source port replaced with fictitious values.
+# Source 192.0.2.101 is a documentation address, not the actual lab address.
+2026-11-04T20:51:32-03:00 lab-server sshd[9001]: Failed password for lab-user from 192.0.2.101 port 50001 ssh2
+2026-11-04T20:51:53-03:00 lab-server sshd[9002]: Failed password for lab-user from 192.0.2.101 port 50002 ssh2
+2026-11-04T20:52:00-03:00 lab-server sshd[9003]: Failed password for lab-user from 192.0.2.101 port 50003 ssh2
