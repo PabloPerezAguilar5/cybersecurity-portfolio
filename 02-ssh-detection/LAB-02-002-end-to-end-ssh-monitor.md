@@ -45,8 +45,9 @@ by the parser. It must not be used to infer original PIDs, accounts or ports.
 
 The [sanitized operational excerpt](evidence/LAB-02-002-monitor-sanitized.txt)
 records follower startup at 20:48:59 and Telegram API acceptance of a detection
-at 20:52:12.084 (host-local UTC−03:00). The reviewed current log contained no ERROR
-entries. The 12.084-second difference from the final journal event is an observed
+at 20:52:12.084 (host-local UTC−03:00). At the time of that earlier review, the
+reviewed log contained no ERROR entries; a later connection error and exit are
+documented in [LAB-02-003](LAB-02-003-hydra-exercise.md). The 12.084-second difference from the final journal event is an observed
 interval, not a measured or guaranteed delivery latency. The operational message
 contains no source or event identifier, so its association with this test rests
 on timing and the author's matching alert report, not an independently stored

@@ -1,6 +1,6 @@
 # 01 | Linux Security Log Investigation
 
-**Status:** Planned / in progress. No findings claimed yet.
+**Status:** Completed for the reviewed learning scope. [LAB-01-001](analysis-report.md) examines a privileged update-related execution with a provisional probably-legitimate classification; [LAB-01-002](LAB-01-002-analysis-report.md) examines an author-reported controlled authentication failure. Neither case establishes a real incident.
 
 ## Scenario
 
@@ -39,11 +39,11 @@ These commands query system information and journal data. They do not modify con
 
 ## Acceptance criteria
 
-- [ ] One clear investigation question and rationale.
-- [ ] Evidence from the host, annotated and sanitized.
-- [ ] A timeline or event summary with timestamps and sources.
-- [ ] Severity/triage assessment that distinguishes observed facts and assumptions.
-- [ ] Completed report reviewed by the author.
-- [ ] Reproducible procedure and explicit limitations.
+- [x] Clear investigation questions and rationale.
+- [x] Evidence from the host, annotated and sanitized.
+- [x] Timelines or event summaries with timestamps and sources.
+- [x] Triage assessments that distinguish observed facts and assumptions.
+- [x] Reports reviewed by the author.
+- [x] Procedures and explicit limitations.
 
-Do not mark this project complete before the investigation and report actually exist.
+The classification of LAB-01-001 remains provisional despite completion of the report.

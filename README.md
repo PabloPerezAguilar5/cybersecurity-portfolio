@@ -19,8 +19,8 @@ Build a series of small, reproducible security investigations. Each completed pr
 
 | # | Project | Status |
 |---|---|---|
-| 01 | [Linux Security Log Investigation](01-linux-log-investigation/README.md) | Planned / starting |
-| 02 | SSH Authentication & Detection | Planned |
+| 01 | [Linux Security Log Investigation](01-linux-log-investigation/README.md) | Completed: two reviewed cases |
+| 02 | [SSH Authentication & Detection](02-ssh-detection/README.md) | Partially completed: controlled cases, detector, live monitor and Telegram demonstration; validation gaps remain |
 | 03 | Python Security Log Analyzer | Planned |
 | 04 | Network Traffic Investigation | Planned |
 | 05 | Vulnerability Assessment | Planned |
@@ -46,4 +46,4 @@ See [roadmap](docs/ROADMAP.md) for scope and completion criteria.
 - Codex: assists with local commands, scripts and documentation in the cloned repository.
 - ChatGPT: reviews project scope, technical evidence and portfolio clarity.
 
-This repository is initially private. No evidence or results are claimed until they have been produced and reviewed.
+The repository contains sanitized lab evidence and records AI assistance. Controlled test activity is distinguished from real incidents; no professional SOC employment is implied. See individual cases for the evidence and its limits.

@@ -1,6 +1,6 @@
 # 02 | SSH Authentication & Detection Lab
 
-**Status:** The controlled end-to-end SSH monitoring test is verified against the journal and operational log, with Telegram receipt confirmed by the author. See [LAB-02-002](LAB-02-002-end-to-end-ssh-monitor.md). Synthetic data remains separate from observed lab evidence. A successful SSH login baseline is still unverified; no real attack or incident is claimed.
+**Status:** Partially completed. A controlled end-to-end SSH monitoring test is supported by journal and operational logs, with Telegram receipt reported by the author; see [LAB-02-002](LAB-02-002-end-to-end-ssh-monitor.md). The author also reports a controlled Hydra/RockYou exercise; [LAB-02-003](LAB-02-003-hydra-exercise.md) records what can and cannot be corroborated. A successful SSH login baseline and the Hydra-to-alert correlation remain unverified. No real incident is claimed.
 
 ## Goal
 
@@ -11,7 +11,7 @@ Learn to identify and triage failed SSH logins in a controlled environment and c
 - Host: Ubuntu 24.04 LTS, Windows 11 dual boot, 8 GB system RAM.
 - Guest: Kali Linux in VirtualBox (2 GB RAM, NAT configured as of initial setup).
 - All activity must remain on owned, explicitly authorized systems.
-- No scanning, credential attacks, password guessing, or requests to public services.
+- No activity against public services or systems outside the explicitly authorized lab. Any controlled password testing is limited to the owner's lab and requires explicit authorization.
 - Do not expose SSH to the Internet or change firewalls / VM network mode without explicit permission.
 - Do not install software, enable SSH services, or modify configuration until the human author inspects the environment and agrees.
 
@@ -67,7 +67,7 @@ Report observations from the actual controlled single attempt separately from an
 
 ## Portfolio integrity
 
-All lab activity is simulated and must be labeled as such. AI assistance may accelerate scripting and documentation, but the human author must understand, validate and defend each finding.
+Controlled tests are lab exercises, not real-world incidents; label them accordingly and separate observed records from author-reported context and untested explanations. AI assistance may accelerate scripting and documentation, but the human author must understand, validate and defend each finding.
 
 ## Controlled event and synthetic detector
 

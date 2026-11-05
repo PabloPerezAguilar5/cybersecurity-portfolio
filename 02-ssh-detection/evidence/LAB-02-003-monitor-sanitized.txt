@@ -1,0 +1,6 @@
+LAB-02-003 | Available local background-monitor log | Host local time UTC-03:00
+Source: ~/.local/state/soc-monitor/monitor.log. Selected entries; no credentials or journal contents.
+
+2026-11-04 22:15:38,374 ERROR Error: Telegram connection failed or timed out; delivery may be unknown. Check network before retrying.
+2026-11-04 22:15:38,383 ERROR No automatic retry: delivery may be unknown. Restart begins with new events only.
+2026-11-04 22:15:38,385 INFO Monitor exited.

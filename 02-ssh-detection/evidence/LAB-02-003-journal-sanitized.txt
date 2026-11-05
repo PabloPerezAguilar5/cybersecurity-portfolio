@@ -1,0 +1,7 @@
+LAB-02-003 | Author-confirmed exercise time; tool and intent not established by journal alone
+Source: journalctl --since '2026-11-04 22:36:10' --until '2026-11-04 22:37:30' --no-pager -o short-iso; first three Failed password entries only.
+Redactions: [HOST], [USER], [SOURCE_IP], [PORT]. Timestamp, process, PID and event wording retained.
+
+2026-11-04T22:36:16-03:00 [HOST] sshd[45844]: Failed password for [USER] from [SOURCE_IP] port [PORT] ssh2
+2026-11-04T22:36:19-03:00 [HOST] sshd[45844]: Failed password for [USER] from [SOURCE_IP] port [PORT] ssh2
+2026-11-04T22:36:22-03:00 [HOST] sshd[45844]: Failed password for [USER] from [SOURCE_IP] port [PORT] ssh2
