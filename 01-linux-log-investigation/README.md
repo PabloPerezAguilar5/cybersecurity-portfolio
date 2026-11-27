@@ -1,31 +1,35 @@
 # 01 | Linux Security Log Investigation
 
-**Status:** Completed for the reviewed learning scope. [LAB-01-001](analysis-report.md) examines a privileged update-related execution with a provisional probably-legitimate classification; [LAB-01-002](LAB-01-002-analysis-report.md) examines an author-reported controlled authentication failure. Neither case establishes a real incident.
+**Status:** Completed for the documented learning scope. Two reviewed cases; neither establishes a real security incident.
 
-## Scenario
-
-You are a SOC L1 analyst reviewing a Linux workstation. Your assignment is to distinguish routine system activity from events that warrant additional investigation.
+[← Portfolio overview](../README.md) · [Report template](report-template.md)
 
 ## Objective
 
-- Learn how `systemd-journald` records events and how `journalctl` queries them.
-- Identify timestamps, sources, severity and relevant context.
-- Produce a timeline and a short triage report based on **observed** facts.
-- Explain at least one benign event and one potentially relevant event (if present). Do not invent suspicious activity.
+Investigate events in a real Linux workstation journal, reconstruct a short timeline, distinguish observations from assumptions, and make a defensible triage decision.
 
-## Environment
+**Environment:** Personal Ubuntu 24.04 LTS workstation. **Tools:** `systemd-journald`, `journalctl`, package metadata queries, sanitized evidence and written incident reports.
 
-Ubuntu 24.04 LTS on an HP laptop. No additional VM or heavy SIEM is required.
+## Investigations and findings
 
-## Investigation workflow
+| Case | Question | Evidence-backed outcome |
+| --- | --- | --- |
+| [LAB-01-001 — Privileged execution](analysis-report.md) | Why was `pkexec` used to run an `update-notifier` helper? | A journal timeline and package metadata support a **probably legitimate** update-related explanation. The classification remains **provisional**; request origin, authorization and file integrity were not established. |
+| [LAB-01-002 — Authentication failure](LAB-01-002-analysis-report.md) | What do the `su` and PAM messages demonstrate? | The journal records an authentication failure and `FAILED SU` for the same process. The author reports an intentional incorrect-password test; no hostile activity was established. |
 
-1. **Baseline (read-only)**: record date/time, current boot, journal disk usage, and recent events.
-2. **Scope**: select a narrow question, such as authentication failures or service errors.
-3. **Collect**: capture only relevant excerpts; do not commit unredacted host logs.
-4. **Analyze**: explain what each event actually establishes, and what it does not.
-5. **Report**: use [the report template](report-template.md) and add redacted evidence to an `evidence/` directory when available.
+**What this demonstrates:** scoped evidence collection, log interpretation, timeline reconstruction, assessment of benign explanations, clear escalation reasoning, and explicit documentation of limitations.
 
-### Safe commands to discuss and run deliberately
+## How I approached the cases
+
+1. Establish a read-only baseline for the boot and the journal.
+2. Select a narrow investigative question and time window.
+3. Review relevant events and neighboring context.
+4. Preserve **sanitized** evidence and separate observed facts from hypotheses.
+5. Write a report with findings, limitations, and a reasoned triage decision.
+
+The complete methodology, timelines and evidence references are in the linked reports, not compressed into this overview.
+
+## Safe, read-only starting commands
 
 ```bash
 date -Is
@@ -35,15 +39,13 @@ journalctl -b -n 30 --no-pager
 journalctl -b -p warning -n 30 --no-pager
 ```
 
-These commands query system information and journal data. They do not modify configuration. Logs may contain hostnames, usernames, IP addresses and other sensitive details: inspect and redact before sharing or committing.
+These commands query local information; they do not change system configuration. System logs can contain private hostnames, usernames, and addresses, so inspect them before copying or committing anything.
 
-## Acceptance criteria
+## Evidence and limits
 
-- [x] Clear investigation questions and rationale.
-- [x] Evidence from the host, annotated and sanitized.
-- [x] Timelines or event summaries with timestamps and sources.
-- [x] Triage assessments that distinguish observed facts and assumptions.
-- [x] Reports reviewed by the author.
-- [x] Procedures and explicit limitations.
+- [Sanitized update-related journal excerpt](evidence/sanitized-log-excerpts.txt)
+- [Sanitized authentication-failure excerpt](evidence/LAB-01-002-sanitized-log-excerpts.txt)
+- [Full privileged-execution report](analysis-report.md)
+- [Full controlled-failure report](LAB-01-002-analysis-report.md)
 
-The classification of LAB-01-001 remains provisional despite completion of the report.
+No compromise was confirmed; the first assessment is intentionally provisional. AI assisted with queries, analysis, and drafting; the author reviewed and documented the laboratory work.
